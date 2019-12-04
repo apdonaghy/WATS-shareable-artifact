@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accessibility Study</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="max-width_1">
+<img src="images/one.svg">
+
+<img class="animatable fadeInUp" src="images/two.svg">
+
+<img class="animatable fadeInUp" src="images/three.svg">
+
+<img class="animatable fadeInUp" src="images/four.svg">
+<a href="https://webaim.org/" target="blank"><img class="animatable fadeInUp" src="images/five_aim.svg"></a>
+<img class="animatable fadeInUp" src="images/six.svg">
+<img class="animatable bounceInRight" src="images/seven.svg">
+<img class="animatable bounceInLeft" src="images/eight.svg">
+<img class="animatable fadeInUp" src="images/nine.svg">
+<img class="animatable bounceInRight" src="images/ten.svg">
+<img class="animatable fadeInUp" src="images/eleven.svg">
+<img class="animatable bounceInRight" src="images/twelve.svg">
+<img class="animatable fadeInUp" src="images/thirteen.svg">
+<img class="animatable bounceInRight" src="images/fourteen.svg">
+
+</div>
+
+<section class="text">
+<p class="max-width_1">These are only the top three issues that hinder accessibility for web users with disabilities. <a href="https://webaim.org/projects/million/">To see the entire accessiblity study, click this link.</a></p>
+</section>
+
+<footer>
+
+<p>WATS 3000 Shareable Artifact</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+
+<script>
+    jQuery(function($) {
+  
+  // Function which adds the 'animated' class to any '.animatable' in view
+  var doAnimations = function() {
+    
+    // Calc current offset and get all animatables
+    var offset = $(window).scrollTop() + $(window).height(),
+        $animatables = $('.animatable');
+    
+    // Unbind scroll handler if we have no animatables
+    if ($animatables.length == 0) {
+      $(window).off('scroll', doAnimations);
+    }
+    
+    // Check all animatables and animate them if necessary
+		$animatables.each(function(i) {
+       var $animatable = $(this);
+			if (($animatable.offset().top + $animatable.height() - 150) < offset) {
+        $animatable.removeClass('animatable').addClass('animated');
+			}
+    });
+
+	};
+  
+  // Hook doAnimations on scroll, and trigger a scroll
+	$(window).on('scroll', doAnimations);
+  $(window).trigger('scroll');
+
+});
+
+
+
+
+</script>
+
+
+</body>
+</html>
