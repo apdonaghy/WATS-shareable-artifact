@@ -1,86 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Accessibility Study</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Accessibility Study</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
 
-    <div class="max-width_1">
-<img src="images/one.svg">
+  <div class="max-width_1">
 
-<img class="animatable fadeInUp" src="images/two.svg">
+    <img id="top" src="images/one.svg">
 
-<img class="animatable fadeInUp" src="images/three.svg">
 
-<img class="animatable fadeInUp" src="images/four.svg">
-<a href="https://webaim.org/" target="blank"><img class="animatable fadeInUp" src="images/five_aim.svg"></a>
-<img class="animatable fadeInUp" src="images/six.svg">
- <img class="animatable fadeInUp" src="images/seven.svg">
-<img class="animatable fadeInUp" src="images/eight.svg">
-<img class="animatable fadeInUp" src="images/nine.svg">
-<img class="animatable fadeInUp" src="images/ten.svg">
-<img class="animatable fadeInUp" src="images/eleven.svg">
-<img class="animatable fadeInUp" src="images/twelve.svg">
-<img class="animatable fadeInUp" src="images/thirteen.svg">
-<img class="animatable fadeInUp"src="images/fourteen.svg">
+    <img data-aos="fade-up" src="images/two.svg">
 
-</div>
 
-<section class="text">
-<p class="max-width_1">These are only the top three issues that hinder accessibility for web users with disabilities. <a href="https://webaim.org/projects/million/" target="blank">To see the entire accessiblity study, click this link.</a></p>
-</section>
 
-<footer>
+    <img data-aos="fade-up" src="images/three.svg">
 
-<p>WATS 3000 Shareable Artifact</p>
-</footer>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-</script>
+    <img data-aos="fade-up" src="images/four.svg">
 
-<script>
-    jQuery(function($) {
+
+
+    <img data-aos="fade-up" src="images/five_aim.svg">
+
+
+
+
+    <img data-aos="fade-up" src="images/six.svg">
+
+
+
+    <img data-aos="fade-left" src="images/seven.svg">
+
+
+
+    <img data-aos="fade-right" src="images/eight.svg">
+
+
+
+    <img data-aos="fade-left" src="images/nine.svg">
+
+
+
+    <img data-aos="fade-right" src="images/ten.svg">
+
+
+    <img data-aos="fade-left" src="images/eleven.svg">
+
+
+
+    <img data-aos="fade-right" src="images/twelve.svg">
+
+
+
+    <img data-aos="fade-left" src="images/thirteen.svg">
+
+
+
+    <img data-aos="fade-right" src="images/fourteen.svg">
+
+  </div>
+
+  <section class="text">
+    <p class="max-width_1">These are only the top three issues that hinder accessibility for web users with
+      disabilities. <a href="https://webaim.org/projects/million/" target="blank">To see the entire accessibility study,
+        click this link.</a></p>
+  </section>
+
+  <footer class="clearfix">
+
+    <p>WATS 3000 Shareable Artifact</p>
+    <a href="#top"><img class="jumpBtn" src="images/jump.svg"></a>
+  </footer>
+
   
-  // Function which adds the 'animated' class to any '.animatable' in view
-  var doAnimations = function() {
-    
-    // Calc current offset and get all animatables
-    var offset = $(window).scrollTop() + $(window).height(),
-        $animatables = $('.animatable');
-    
-    // Unbind scroll handler if we have no animatables
-    if ($animatables.length == 0) {
-      $(window).off('scroll', doAnimations);
-    }
-    
-    // Check all animatables and animate them if necessary
-		$animatables.each(function(i) {
-       var $animatable = $(this);
-			if (($animatable.offset().top + $animatable.height() - 150) < offset) {
-        $animatable.removeClass('animatable').addClass('animated');
-			}
-    });
 
-	};
-  
-  // Hook doAnimations on scroll, and trigger a scroll
-	$(window).on('scroll', doAnimations);
-  $(window).trigger('scroll');
-
-});
-
-
-
-
-</script>
-
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+    })
+  </script>
 
 </body>
+
 </html>
